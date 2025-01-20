@@ -1,7 +1,7 @@
 # Solenoid
 A program in C++ that simulates the magnetic field of a solenoid. To do this a group of coils are placed one on top of the other in the z axis. The coils have the center in the z axis.
 
-!(/Magnetic_Field.png)
+!([/Magnetic_Field.png](https://github.com/GinHar/Solenoid/blob/main/Magnetic_Field.png))
 
 ## Solenoid.cpp
 The program that calculates the magnetic field is solenoid.cpp where we introduce the radius, the intensity, the longitude, the number of coils and the point where we want to calculate the magnetic field. Inside solenoid.cpp there are the functions that we have to integrate for each axis that have been obtained with the Biot-Savart law. This integrals are calculate using the Gauss method.

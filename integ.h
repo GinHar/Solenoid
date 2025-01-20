@@ -7,6 +7,7 @@
 using namespace math;
 using namespace std;
 
+//Trapezoidal method
 double Int_Trap(double x0, double xf, int n, double &Err, double(*y)(double), double(*yp)(double)){
 
   double tau=(xf-x0)/n;
@@ -38,6 +39,8 @@ double Int_Trap(double x0, double xf, int n, double &Err, double(*y)(double), do
 
 }
 
+
+// Simpson's method
 double Int_Simpson(double x0, double xf, int n, double &Err, double(*y)(double), double(*yppp)(double)){
 
   if(n%2==0){
@@ -80,7 +83,7 @@ double Int_Simpson(double x0, double xf, int n, double &Err, double(*y)(double),
 
   }else{
 
-    cout<<"El numero de intervalos no son pares"<<endl;
+    cout<<"The number of intervals isn't even"<<endl;
     double val=0;
     return val;
     
@@ -90,7 +93,7 @@ double Int_Simpson(double x0, double xf, int n, double &Err, double(*y)(double),
 
 
 
-
+// Gauss's method
 long double Int_Gauss(long double a,long double b,long double R, matrix<long double> r2,double(*y)(long double,long double, matrix<long double>)){
 
   int n;

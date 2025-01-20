@@ -4,14 +4,15 @@
 #include<string>
 #include"matrix.h"
 #include"integ.h"
-#include"number_Gauss.h"
 
 using namespace math;
 using namespace std;
 
 
 
-//Specific for a coil in the plane xy
+//Specific for a coil in the plane XY
+//Functions that need to be integrated to calculated the effect of one coil
+//Each function calculates the magnetic field in one axis.
 
 double Bx_Integral(long double R,long double t, matrix<long double> r2){
 
@@ -48,10 +49,11 @@ double Bz_Integral(long double R,long double t, matrix<long double> r2){
 
 int main(){
 
-  long double R=0.0079;//11cm
-  long double I1=0.125;//10A
+  //Data
+  long double R=0.0079;//0.0079m
+  long double I1=0.125;//0.125A
   long double mu=4*M_PI*pow(10,-7);
-  long double L=0.704;//5m
+  long double L=0.704;//0.704m
   double N=3200;//
 
   double step=L/N;
@@ -64,6 +66,7 @@ int main(){
 
   for(int i=0;i<N;i++){
 
+    //We are calculating the magnetic field in the (0,0,0) point
     r2(0,0)=0;
     r2(1,0)=0;
     r2(2,0)=L0+i*step;
